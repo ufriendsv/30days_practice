@@ -1,0 +1,87 @@
+#9/9
+
+#문자열 자료형
+
+"Life is too short, You need Python"
+"a"
+"123"
+
+"Hello World"
+'Python is fun'
+"""Life is too short, You need Python"""
+'''Life is too short, You need Python'''
+
+food = "Python's favorite food is perl"
+print(food)
+
+say = '"python is very easy." he says'
+print(say)
+
+food = 'Python\'s favorite food is perl'
+say = "\"Python is very easy.\" he says."
+
+#여러 줄인 문자열을 변수에 대입하고 싶을 때
+multiline = "Life is too short\nYou need Python"
+print(multiline)
+
+multiline = """
+Life is too short
+You need python"""
+print(multiline)
+
+#문자열 연산하기
+head = "Python"
+tail = " is fun"
+print(head + tail)
+
+a = "Python"
+print(a*2)
+
+#문자열 곱하기 응용
+print("=" * 50)
+
+a = "You need Python"
+print(len(a))
+
+
+#문자열 인덱싱과 슬라이싱
+a = "Life is too short, You need Python"
+print(a[3])
+
+a = "20010331Rainy"
+date = a[:8]
+weather = a[8:]
+
+print(date)
+print(weather)
+
+year = a[:4]
+day = a[4:8]
+weather = a[8:]
+
+print(year)
+print(day)
+print(weather)
+
+
+# 문자열 포매팅
+print('I eat %d apples.' % 3)
+
+number = 10
+day = 'three'
+print("I ate %d apples. So I was sick for %s days" %(number, day))
+
+print("%10s" % 'hi')
+print("%-10sjane" % 'hi')
+print("%0.4f" % 3.42134234)
+print("%10.4f" % 3.42134234)
+
+print("I eat {0} apples".format(3))
+
+#2개 이상 값 넣기
+number = 10
+day = "three"
+print('I ate {0} apples. so I was sick for {1} days.'.format(number, day))
+
+#이름으로 넣기
+print("I ate {number} apples. So I was sick for {day} days.".format(number=10, day='three'))
