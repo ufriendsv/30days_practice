@@ -1,0 +1,103 @@
+# 9/19 + 9/23 (튜플 + 딕셔너리 to be continued)
+
+# 튜플 자료형 (소괄호 안에 있으면 튜플, 대괄호 안에 있으면 리스트)
+t1 = ()
+t2 = (1,)
+t3 = (1, 2, 3)
+t4 = 1, 2, 3
+t5 = ('a', 'b', ('ab', 'cd'))
+
+print(t1)
+print(t2)
+print(t3)
+print(t4)
+print(t5)
+
+# 튜플 요솟값 삭제 (삭제불가)
+
+'''
+del t5[0]
+Traceback (most recent call last):
+  File "C:/Users/USER/.PyCharmCE2019.2/config/scratches/scratch.py", line 17, in <module>
+    del t5[0]
+
+TypeError: 'tuple' object doesn't support item deletion
+'''
+
+# 튜플 요솟값 변경 (변경불가)
+'''
+t5[0] = 'c'
+Traceback (most recent call last):
+  File "C:/Users/USER/.PyCharmCE2019.2/config/scratches/scratch.py", line 28, in <module>
+    t5[0] = 'c'
+
+TypeError: 'tuple' object does not support item assignment
+'''
+
+# 튜플 인덱싱하기
+print(t5[1])
+
+# 튜플 슬라이싱하기
+print(t5[1:])
+t6 = t5 + t4
+
+# 튜플 더하기
+print(t6)
+
+# 튜플 길이 구하기 (튜플 내 튜플은 하나로 침)
+print(len(t6))
+
+# 딕셔너리 자료형 {key : value} -> 표같은 느낌?
+dic = {'name' : 'pey', 'phone' : '01199933323', 'birth' : '1118'}
+print(dic)
+
+a = {1 : 'hi'}
+b = {'b' : [1,2,3]}
+print(a)
+print(b)
+
+# 딕셔너리 쌍 추가하기
+a = {1 : 'a'}
+a[2] = 'b'
+print(a) # {1: 'a', 2: 'b'}
+
+'''
+딕셔너리는 쌍 추가시 튜플이나 리스트처럼 하나의 값?으로 표현되지 않고
+딕셔너리 형태에 맞게 key : value 형식으로 추가 됨
+'''
+
+a['name'] = 'pey'
+print(a) # {1: 'a', 2: 'b', 'name': 'pey'}
+''' key는 숫자 뿐만 아니라 문자를 넣을 수도 있음'''
+
+# 딕셔너리 요소 삭제하기
+del a[1]
+print(a) # {2: 'b', 'name': 'pey'}
+'''딕셔너리 요소 삭제시 [내용]은 숫자여도 인덱스가 아니라 key로 인식함!!! '''
+
+# 딕셔너리에서 key 사용해 value 얻기
+grade = {'pey' : 10, 'julliet' : 99}
+print(grade['pey']) # 10
+print(grade['julliet']) # 99
+
+
+'''딕셔너리 [내용]은 숫자여도 인덱스가 아니라 key로 인식함!!! '''
+# 딕셔너리가 key를 인식하는 방식
+a = {'a' : 1, 'b' : 2}
+print(a['a']) # 1
+print(a['b']) # 2
+# print(a[1]) ->'1' 이라는 key가 없어 아무런 값 없음
+
+'''key 값이 중복될 경우, 앞선 key 값은 모두 무시당함'''
+a = {1 : 'a', 1 : 'b', 1 : 'c'}
+print(a) # {1 : 'b'} -> key가 같으면 맨 뒤의 것을 가져옴?!?
+
+'''리스트는 딕셔너리의 key가 될 수 없음, 단 튜플은 가능함'''
+# a = {[1,2] : 'hi'}
+# print(a) -> TypeError: unhashable type: 'list'
+
+b = {(1,2) : 'hello'}
+print(b) # {(1, 2): 'hello'}
+
+a = {'name' : 'pey', 'phone' : '01199933323', 'birth' : '1118'}
+print(a.keys()) # dict_keys(['name', 'phone', 'birth'])
